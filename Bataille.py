@@ -1,10 +1,12 @@
 ##IMPORTATION
+
 from random import randint
 
 
 
 
 ##VARIABLE
+
 card = dict() # Dictionnaire associant un nombre à une carte (numéro de la carte : [nom de la carte, nombre de carte prise])
 
 
