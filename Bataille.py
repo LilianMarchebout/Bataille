@@ -1,13 +1,9 @@
-##IMPORTATION
-
 from random import randint # Permet de définir les nombres aléatoirement
 
 from time import sleep # Permet de faire attendre le programme x seconde(s)
 
 
 
-
-##VARIABLE
 
 # Dictionnaire associant un nombre à une carte (numéro de la carte : [nom de la carte, nombre de carte prise])
 card = {1: ["Deux", 0], 
@@ -36,7 +32,7 @@ cardNumber = 52 # Nombre de cartes dans le paquet de jeu
 
 
 
-##FONCTION
+
 def distribution():
     """
     Distribution des cartes aux joueurs
@@ -62,16 +58,23 @@ def distribution():
             cardP2.append(cardRandom)
 
 
-def roundd():
+
+
+distribution()
+cardPlayP1 = cardP1[0] #Carte jouée par le joueur 1
+cardPlayP2 = cardP2[0] #Carte jouée par le joueur 2
+cardSymbol = card[cardPlayP1]
+print("Le joueur 1 joue la carte :", cardSymbol[0])
+cardSymbol = card[cardPlayP2]
+print("Le joueur 2 joue la carte :", cardSymbol[0])
+
+
+
+
+def roundCondition():
     """
     Joue une manche et determine quel joueur gagne la manche
     """
-    cardPlayP1 = cardP1[0] #Carte jouée par le joueur 1
-    cardPlayP2 = cardP2[0] #Carte jouée par le joueur 2
-    cardSymbol = card[cardPlayP1]
-    print("Le joueur 1 joue la carte :", cardSymbol[0])
-    cardSymbol = card[cardPlayP2]
-    print("Le joueur 2 joue la carte :", cardSymbol[0])
     if cardPlayP1 > cardPlayP2: #Joueur 1 gagne la manche
         # Met à la fin du paquet du joueur la carte jouée
         cardP1.remove(cardPlayP1)
@@ -96,11 +99,21 @@ def roundd():
         cardHidedP1 = cardP1[1]
         cardHidedP2 = cardP2[1]
         #Carte qui va définir qui va gagner la mise
-        cardVisibleP1 = cardP1[2]
-        cardVisibleP2 = cardP2[2]
+        cardPlayP1 = cardP1[2]
+        cardPlayP2 = cardP2[2]
+        #Met dans les listes les cartes mis en jeu
+        #Joueur 1
+        cardEqualityP1.append(cardP1[0])
+        cardEqualityP1.append(cardP1[1])
+        cardEqualityP1.append(cardP1[2])
+        #Joueur 2
+        cardEqualityP2.append(cardP2[0])
+        cardEqualityP2.append(cardP2[1])
+        cardEqualityP2.append(cardP2[2])
+        #Rejoue avec les cartes visibles
+        roundCondition()
 
 
 
-##SCRIPT
-distribution()
-roundd()
+
+roundCondition()
