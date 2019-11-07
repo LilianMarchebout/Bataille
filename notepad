@@ -1,0 +1,26 @@
+# French rule
+- cartes
+  - hiérarchie des cartes 
+    - "As" supérieur aux autres
+    - "Deux" interieur aux autres
+  - 52 cartes
+    - sans les jokers
+  - 4 cartes pour chaque numéro de carte
+  - distribution
+    - autant pour chaque joueur
+    - tout le paquet
+    - aléatoirement
+- manche 
+  - si un joueur gagne la manche :
+    - remet sa carte à la fin de son paquet
+    - ramasse la carte de l'adversaire et la met à la fin de son paquet
+  - si il y a égalité :
+    - mettre chacun une carte face caché puis une carte visible qui va définir qui gagne la mise
+      - si égalité, recommencer
+      - si un joueur n'a plus de carte pour en placer :
+        - la carte du joueur qui va définir sera sa dernière carte, mais pas pour l'adversaire
+      - si tous les joueurs n'ont plus de cartes pour jouer la mise :
+        - Fin de la partie sur une égalité
+- partie
+  - 2 joueurs
+  - un joueur gagne s'il a récupéré toutes les cartes du paquet
