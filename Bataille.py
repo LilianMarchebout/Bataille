@@ -58,9 +58,14 @@ def distribution():
             cardP2.append(cardRandom)
 
 
-def round():
+def roundd():
+    """
+    Joue une manche et determine quel joueur gagne la manche
+    """
     cardPlayP1 = cardP1[0] #Carte jouée par le joueur 1
     cardPlayP2 = cardP2[0] #Carte jouée par le joueur 2
+    print("Le joueur 1 joue la carte : ", card[cardPlayP1 [0]])
+    print("Le joueur 2 joue la carte : ", card[cardPlayP2 [0]])
     if cardPlayP1 > cardPlayP2: #Joueur 1 gagne la manche
         # Met à la fin du paquet du joueur la carte jouée
         cardP1.remove(cardPlayP1)
@@ -68,6 +73,8 @@ def round():
         # Ajoute la carte gagnée et la supprimme à l'adversaire
         cardP2.remove(cardPlayP2)
         cardP1.append(cardPlayP2)
+        #Affichage
+        print("Le joueur 1 gagne la mise")
     elif cardPlayP1 < cardPlayP2: #Joueur 2 gagne la manche
         # Met à la fin du paquet du joueur la carte jouée
         cardP2.remove(cardPlayP2)
@@ -75,8 +82,11 @@ def round():
         # Ajoute la carte gagnée et la supprimme à l'adversaire
         cardP1.remove(cardPlayP1)
         cardP2.append(cardPlayP1)
+        #Affichage
+        print("Le joueur 2 gagne la mise")
 
 
 
 ##SCRIPT
 distribution()
+roundd()
