@@ -1,6 +1,8 @@
 ##IMPORTATION
 
-from random import randint
+from random import randint # Permet de définir les nombres aléatoirement
+
+from time import sleep # Permet de faire attendre le programme x seconde(s)
 
 
 
@@ -65,9 +67,9 @@ def roundd():
     cardPlayP1 = cardP1[0] #Carte jouée par le joueur 1
     cardPlayP2 = cardP2[0] #Carte jouée par le joueur 2
     cardSymbol = card[cardPlayP1]
-    print("Le joueur 1 joue la carte : ", cardSymbol[0])
-    cardSymbol = card[cardPlayP1]
-    print("Le joueur 2 joue la carte : ", cardSymbol[0])
+    print("Le joueur 1 joue la carte :", cardSymbol[0])
+    cardSymbol = card[cardPlayP2]
+    print("Le joueur 2 joue la carte :", cardSymbol[0])
     if cardPlayP1 > cardPlayP2: #Joueur 1 gagne la manche
         # Met à la fin du paquet du joueur la carte jouée
         cardP1.remove(cardPlayP1)
@@ -86,6 +88,8 @@ def roundd():
         cardP2.append(cardPlayP1)
         #Affichage
         print("Le joueur 2 gagne la mise")
+    elif cardPlayP1 == cardPlayP2:
+        print("Egalité de la mise")
 
 
 
