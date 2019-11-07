@@ -62,6 +62,7 @@ def distribution():
 
 
 distribution()
+
 cardPlayP1 = cardP1[0] #Carte jouée par le joueur 1
 cardPlayP2 = cardP2[0] #Carte jouée par le joueur 2
 cardSymbol = card[cardPlayP1]
