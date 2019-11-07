@@ -30,16 +30,14 @@ cardP2 = [] # Joueur 2
 cardNumber = 52 # Nombre de cartes dans le paquet de jeu
 
 
+
+
 ##FONCTION
-
-
-
-
-##SCRIPT
-
-# Distribution des cartes aux joueurs
 def distribution():
-    while len(cardP1) < 26:
+    """
+    Distribution des cartes aux joueurs
+    """
+    while len(cardP1) < cardNumber/2:
         # Joueur 1
         cardRandom = randint(1, 13)
         substitute = card[cardRandom]
@@ -47,26 +45,21 @@ def distribution():
         if substitute[1] > 4:
             substitute[1] -= 1
             distribution()
-        cardP1.append(cardRandom)
-    while len(cardP2) < 26:
+        else:
+            cardP1.append(cardRandom)
+    while len(cardP2) < cardNumber/2:
         # Joueur 2
         cardRandom = randint(1, 13)
         substitute = card[cardRandom]
+        substitute[1] += 1
         if substitute[1] > 4:
             substitute[1] -= 1
             distribution()
-        cardP2.append(cardRandom)
+        else:
+            cardP2.append(cardRandom)
 
-#Affichage
+
+
+
+##SCRIPT
 distribution()
-print("liste P1 =")
-for boucle in range(len(cardP1)):
-    substitue = cardP1[boucle]
-    print(boucle , ":" , card[substitue])
-print("liste P2 =")
-for boucle in range(len(cardP2)):
-    substitue = cardP2[boucle]
-    print(boucle , ":" , card[substitue])
-print("dictionnaire = ")
-for boucle in range(len(card)):
-    print(card[boucle+1])
