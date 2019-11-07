@@ -64,8 +64,10 @@ def roundd():
     """
     cardPlayP1 = cardP1[0] #Carte jouée par le joueur 1
     cardPlayP2 = cardP2[0] #Carte jouée par le joueur 2
-    print("Le joueur 1 joue la carte : ", card[cardPlayP1 [0]])
-    print("Le joueur 2 joue la carte : ", card[cardPlayP2 [0]])
+    cardSymbol = card[cardPlayP1]
+    print("Le joueur 1 joue la carte : ", cardSymbol[0])
+    cardSymbol = card[cardPlayP1]
+    print("Le joueur 2 joue la carte : ", cardSymbol[0])
     if cardPlayP1 > cardPlayP2: #Joueur 1 gagne la manche
         # Met à la fin du paquet du joueur la carte jouée
         cardP1.remove(cardPlayP1)
