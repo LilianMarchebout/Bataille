@@ -75,6 +75,8 @@ def roundCondition():
     """
     Joue une manche et determine quel joueur gagne la manche
     """
+    global cardPlayP1
+    global cardPlayP2
     if cardPlayP1 > cardPlayP2: #Joueur 1 gagne la manche
         # Met à la fin du paquet du joueur la carte jouée
         cardP1.remove(cardPlayP1)
