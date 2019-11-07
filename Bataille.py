@@ -28,6 +28,8 @@ card = {1: ["Deux", 0],
 # Liste des cartes des joueurs
 cardP1 = [] # Joueur 1
 cardP2 = [] # Joueur 2
+cardEqualityP1 = [] # Carte sauvegardée lors d'une égalité pour le joueur 1
+cardEqualityP2 = [] # Carte sauvegardée lors d'une égalité pour le joueur 2
 
 cardNumber = 52 # Nombre de cartes dans le paquet de jeu
 
@@ -90,6 +92,12 @@ def roundd():
         print("Le joueur 2 gagne la mise")
     elif cardPlayP1 == cardPlayP2:
         print("Egalité de la mise")
+        #Cartes cachées
+        cardHidedP1 = cardP1[1]
+        cardHidedP2 = cardP2[1]
+        #Carte qui va définir qui va gagner la mise
+        cardVisibleP1 = cardP1[2]
+        cardVisibleP2 = cardP2[2]
 
 
 
