@@ -28,6 +28,7 @@ cardEqualityP1 = [] # Carte sauvegardée lors d'une égalité pour le joueur 1
 cardEqualityP2 = [] # Carte sauvegardée lors d'une égalité pour le joueur 2
 
 cardNumber = 52 # Nombre de cartes dans le paquet de jeu
+egality = 0 #Pour ajouter les elements des listes au gagnant lors d'une bataille
 
 
 
@@ -75,6 +76,7 @@ def roundCondition():
     """
     Joue une manche et determine quel joueur gagne la manche
     """
+    global egality
     global cardPlayP1
     global cardPlayP2
     if cardPlayP1 > cardPlayP2: #Joueur 1 gagne la manche
@@ -84,6 +86,12 @@ def roundCondition():
         # Ajoute la carte gagnée et la supprimme à l'adversaire
         cardP2.remove(cardPlayP2)
         cardP1.append(cardPlayP2)
+        # S'il y avait bataille
+        if egality == 1:
+            for element in cardEqualityP1:
+                cardP2.append(element)
+            for element in cardEqualityP2:
+                cardP2.append(element)
         #Affichage
         print("Le joueur 1 gagne la mise")
     elif cardPlayP1 < cardPlayP2: #Joueur 2 gagne la manche
@@ -93,6 +101,12 @@ def roundCondition():
         # Ajoute la carte gagnée et la supprimme à l'adversaire
         cardP1.remove(cardPlayP1)
         cardP2.append(cardPlayP1)
+        # S'il y avait bataille
+        if egality == 1:
+            for element in cardEqualityP1:
+                cardP2.append(element)
+            for element in cardEqualityP2:
+                cardP2.append(element)
         #Affichage
         print("Le joueur 2 gagne la mise")
     elif cardPlayP1 == cardPlayP2:
@@ -110,13 +124,14 @@ def roundCondition():
         #Joueur 2
         cardEqualityP2.append(cardP2[0])
         cardEqualityP2.append(cardHidedP2)
+        #Variable pour ajouter les elements des listes au gagnant
+        egality = 1
         #Rejoue avec les cartes visibles
         roundCondition()
-        #Vidage des listes 
+        #Remise à 0
         cardEqualityP1 = []
         cardEqualityP2 = []
-
-
+        egality = 0
 
 
 
