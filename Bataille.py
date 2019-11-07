@@ -106,14 +106,17 @@ def roundCondition():
         #Met dans les listes les cartes mis en jeu
         #Joueur 1
         cardEqualityP1.append(cardP1[0])
-        cardEqualityP1.append(cardP1[1])
-        cardEqualityP1.append(cardP1[2])
+        cardEqualityP1.append(cardHidedP1)
         #Joueur 2
         cardEqualityP2.append(cardP2[0])
-        cardEqualityP2.append(cardP2[1])
-        cardEqualityP2.append(cardP2[2])
+        cardEqualityP2.append(cardHidedP2)
         #Rejoue avec les cartes visibles
         roundCondition()
+        #Vidage des listes 
+        cardEqualityP1 = []
+        cardEqualityP2 = []
+
+
 
 
 
