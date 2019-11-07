@@ -59,20 +59,20 @@ def distribution():
 
 
 def round():
-    cardPlayP1 = cardP1[0]
-    cardPlayP2 = cardP2[0]
+    cardPlayP1 = cardP1[0] #Carte jouée par le joueur 1
+    cardPlayP2 = cardP2[0] #Carte jouée par le joueur 2
     if cardPlayP1 > cardPlayP2: #Joueur 1 gagne la manche
         # Met à la fin du paquet du joueur la carte jouée
         cardP1.remove(cardPlayP1)
         cardP1.append(cardPlayP1)
-        # Ajoute la carte gagné et la supprimme à l'adversaire
+        # Ajoute la carte gagnée et la supprimme à l'adversaire
         cardP2.remove(cardPlayP2)
         cardP1.append(cardPlayP2)
     elif cardPlayP1 < cardPlayP2: #Joueur 2 gagne la manche
         # Met à la fin du paquet du joueur la carte jouée
         cardP2.remove(cardPlayP2)
         cardP2.append(cardPlayP2)
-        # Ajoute la carte gagné et la supprimme à l'adversaire
+        # Ajoute la carte gagnée et la supprimme à l'adversaire
         cardP1.remove(cardPlayP1)
         cardP2.append(cardPlayP1)
 
