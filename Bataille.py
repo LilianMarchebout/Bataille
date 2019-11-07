@@ -68,7 +68,7 @@ def round():
         # Ajoute la carte gagné et la supprimme à l'adversaire
         cardP2.remove(cardPlayP2)
         cardP1.append(cardPlayP2)
-    if cardPlayP1 < cardPlayP2: #Joueur 2 gagne la manche
+    elif cardPlayP1 < cardPlayP2: #Joueur 2 gagne la manche
         # Met à la fin du paquet du joueur la carte jouée
         cardP2.remove(cardPlayP2)
         cardP2.append(cardPlayP2)
